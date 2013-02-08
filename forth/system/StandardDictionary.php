@@ -87,6 +87,15 @@ class StandardDictionary {
                                         echo chr($a);
                                         return null;
                                 })); 
-                                
+                //Копирует второй по очередности элемент стека на его вершину.
+                $dict->addWord(new Word('OVER',2,2,function ($a, $b) {
+                                        return array($a, $b, $a);
+                                })); 
+                $dict->addWord(new Word('ROT',3,3,function ($a, $b, $c) {
+                        return array($b, $a, $c);
+                                })); 
+                $dict->addWord(new Word('DROP',1,1,function ($a) {
+                        return null;
+                                }));                                
         }
 }
